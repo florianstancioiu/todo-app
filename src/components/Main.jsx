@@ -49,8 +49,8 @@ const Main = () => {
           ))}
         </div>
         <TodoNumber />
-        <SwitchTodos />
       </div>
+      <SwitchTodos />
       <ReorderMessage />
     </main>
   );
