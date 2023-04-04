@@ -8,7 +8,7 @@ const Todo = ({ title, complete }) => {
     : classes.wrapper;
 
   return (
-    <div className={wrapperClasses}>
+    <div draggable='true' className={wrapperClasses}>
       <div className={classes.complete}></div>
       <div className={classes['fully-complete']}>
         <img className={classes['check-icon']} src={IconCheck} alt='' />

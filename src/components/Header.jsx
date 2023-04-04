@@ -12,6 +12,17 @@ const Header = () => {
   const switchRef = useRef();
 
   useEffect(() => {
+    const bodyElement = document.querySelector('body');
+
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      bodyElement.classList.remove('light-theme');
+    } else {
+      bodyElement.classList.add('light-theme');
+    }
+
     switchRef.current.addEventListener('click', toggleBodyClass);
 
     return () => {
