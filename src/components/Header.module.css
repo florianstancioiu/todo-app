@@ -1,0 +1,22 @@
+.header {
+  height: 20rem;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  padding: 4.2rem 2.2rem 0;
+}
+
+.title {
+  color: var(--clr-white);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.switch-theme-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1.2rem;
+  cursor: pointer;
+}

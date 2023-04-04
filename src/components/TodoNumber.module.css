@@ -1,0 +1,23 @@
+.wrapper {
+  background-color: var(--bg-secondary);
+  padding: 0 2rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  user-select: none;
+  margin-bottom: 2rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.items-left,
+.clear-completed {
+  color: var(--clr-ternary);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.clear-completed {
+  cursor: pointer;
+}
