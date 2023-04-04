@@ -1,0 +1,39 @@
+.header {
+  height: 20rem;
+  width: 100%;
+  background-size: cover;
+  background-image: url('./images/bg-mobile-dark.jpg');
+  display: flex;
+  justify-content: space-between;
+  padding: 4.2rem 2.2rem 0;
+}
+
+.header .title {
+  color: var(--clr-white);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.header .switch-theme-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1.2rem;
+  cursor: pointer;
+}
+
+.header .show-dark-icon {
+  display: none;
+}
+
+.light-theme .show-light-icon {
+  display: none;
+}
+
+.light-theme .header {
+  background-image: url('./images/bg-mobile-light.jpg');
+}
+
+.light-theme .show-dark-icon {
+  display: block;
+}

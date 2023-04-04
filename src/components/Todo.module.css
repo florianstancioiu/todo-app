@@ -9,6 +9,34 @@
   user-select: none;
 }
 
+.wrapper.completed .title {
+  text-decoration: line-through;
+  color: var(--clr-ternary);
+}
+
+.wrapper.completed .complete {
+  display: none;
+}
+
+.wrapper.completed .fully-complete {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 2rem;
+  top: 1.3rem;
+  background: var(--gradient);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-check {
+  width: 1rem;
+  height: 1rem;
+}
+
 .title {
   margin-left: 3.2rem;
   color: var(--clr-primary);
@@ -26,6 +54,10 @@
   left: 2rem;
   top: 1.3rem;
   cursor: pointer;
+}
+
+.fully-complete {
+  display: none;
 }
 
 .remove {
