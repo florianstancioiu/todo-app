@@ -2,7 +2,7 @@
   height: 20rem;
   width: 100%;
   background-size: cover;
-  background-image: url('./images/bg-mobile-dark.jpg');
+  background-image: url('./assets/images/bg-mobile-dark.jpg');
 }
 
 .header-inner {
@@ -34,7 +34,7 @@
 }
 
 .light-theme .header {
-  background-image: url('./images/bg-mobile-light.jpg');
+  background-image: url('./assets/images/bg-mobile-light.jpg');
 }
 
 .light-theme .show-dark-icon {
@@ -44,11 +44,11 @@
 @media screen and (min-width: 545px) {
   .header {
     min-height: 30rem;
-    background-image: url('./images/bg-desktop-dark.jpg');
+    background-image: url('./assets/images/bg-desktop-dark.jpg');
   }
 
   .light-theme .header {
-    background-image: url('./images/bg-desktop-light.jpg');
+    background-image: url('./assets/images/bg-desktop-light.jpg');
   }
 
   .header-inner {
