@@ -29,20 +29,13 @@ body {
 
 body.light-theme {
   --clr-primary: hsl(235, 19%, 35%);
-  --clr-secondary: hsl(236, 9%, 61%);
+  --clr-secondary: hsl(235, 19%, 35%);
   --clr-secondary-hover: hsl(236, 33%, 92%);
   --clr-ternary: hsl(236, 9%, 61%);
   --clr-ternary-hover: hsl(235, 19%, 35%);
   --clr-white: white;
   --clr-bright-blue: hsl(220, 98%, 61%);
   --clr-border: hsl(234, 11%, 52%);
-
-  /*
-- Light Grayish Blue: hsl(233, 11%, 84%)
-- Dark Grayish Blue: hsl(236, 9%, 61%)
-- Very Dark Grayish Blue: hsl(235, 19%, 35%)
-  */
-
   --bg-primary: hsl(0, 0%, 98%);
   --bg-secondary: hsl(236, 33%, 92%);
 }

@@ -32,18 +32,20 @@ const Header = () => {
 
   return (
     <header className='header'>
-      <h1 className='title'>Todo</h1>
-      <div ref={switchRef} className='switch-wrapper'>
-        <img
-          src={IconSun}
-          className='switch-theme-icon show-light-icon'
-          alt=''
-        />
-        <img
-          src={IconMoon}
-          className='switch-theme-icon show-dark-icon'
-          alt=''
-        />
+      <div className='header-inner'>
+        <h1 className='title'>Todo</h1>
+        <div ref={switchRef} className='switch-wrapper'>
+          <img
+            src={IconSun}
+            className='switch-theme-icon show-light-icon'
+            alt=''
+          />
+          <img
+            src={IconMoon}
+            className='switch-theme-icon show-dark-icon'
+            alt=''
+          />
+        </div>
       </div>
     </header>
   );

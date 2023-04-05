@@ -3,6 +3,9 @@
   width: 100%;
   background-size: cover;
   background-image: url('./images/bg-mobile-dark.jpg');
+}
+
+.header-inner {
   display: flex;
   justify-content: space-between;
   padding: 4.2rem 2.2rem 0;
@@ -36,4 +39,33 @@
 
 .light-theme .show-dark-icon {
   display: block;
+}
+
+@media screen and (min-width: 545px) {
+  .header {
+    min-height: 30rem;
+    background-image: url('./images/bg-desktop-dark.jpg');
+  }
+
+  .light-theme .header {
+    background-image: url('./images/bg-desktop-light.jpg');
+  }
+
+  .header-inner {
+    max-width: 544px;
+    margin: 0 auto;
+    padding-top: 7.5rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header .switch-theme-icon {
+    height: 2.7rem;
+    width: 2.7rem;
+  }
+
+  .header .title {
+    letter-spacing: 1rem;
+    font-size: 4rem;
+  }
 }

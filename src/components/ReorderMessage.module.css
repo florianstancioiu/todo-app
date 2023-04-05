@@ -5,3 +5,10 @@
   padding-bottom: 7.2rem;
   font-size: 1.4rem;
 }
+
+@media screen and (min-width: 545px) {
+  .message {
+    margin-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}

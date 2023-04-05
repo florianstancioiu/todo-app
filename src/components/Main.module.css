@@ -6,5 +6,15 @@
 .todos-wrapper {
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 545px) {
+  .main {
+    max-width: 544px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -14.6rem;
+    padding: 0;
+  }
 }

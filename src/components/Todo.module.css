@@ -68,3 +68,28 @@
   right: 2rem;
   top: 1.5rem;
 }
+
+@media screen and (min-width: 545px) {
+  .wrapper {
+    height: 6.5rem;
+  }
+
+  .title {
+    margin-left: 4.8rem;
+    font-size: 1.8rem;
+  }
+
+  .wrapper.completed .fully-complete,
+  .complete {
+    width: 2.6rem;
+    height: 2.6rem;
+    left: 2.2rem;
+    top: 1.8rem;
+  }
+
+  .remove {
+    width: 1.8rem;
+    height: 1.8rem;
+    top: 2.4rem;
+  }
+}

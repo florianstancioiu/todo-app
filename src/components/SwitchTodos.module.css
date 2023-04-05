@@ -20,10 +20,20 @@
   cursor: pointer;
 }
 
+.wrapper > p:hover {
+  color: var(--clr-secondary);
+}
+
 .active {
   color: var(--clr-bright-blue);
 }
 
 .wrapper p:last-child {
   margin: 0;
+}
+
+@media screen and (min-width: 545px) {
+  .wrapper {
+    display: none;
+  }
 }
