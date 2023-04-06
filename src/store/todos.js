@@ -36,7 +36,15 @@ const todosSlice = createSlice({
     setTodos(state, action) {
       state.todos = action.payload.todos;
     },
-    clearCompletedTodos(state) {},
+    clearCompletedTodos(state) {
+      state.todos = state.todos.filter((todo) => {
+        if (!todo.completed) {
+          return true;
+        }
+
+        return false;
+      });
+    },
     filterTodos(state, action) {},
   },
 });
