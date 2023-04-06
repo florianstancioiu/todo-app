@@ -12,8 +12,27 @@ const todosSlice = createSlice({
     addTodo(state, action) {
       state.todos = [action.payload.todo, ...state.todos];
     },
-    removeTodo(state, action) {},
-    completeTodo(state, action) {},
+    removeTodo(state, action) {
+      state.todos = state.todos.filter((todo) => {
+        if (action.payload.id !== todo.id) {
+          return true;
+        }
+
+        return false;
+      });
+    },
+    completeTodo(state, action) {
+      state.todos = state.todos.map((todo) => {
+        if (action.payload.id === todo.id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+
+        return todo;
+      });
+    },
     setTodos(state, action) {
       state.todos = action.payload.todos;
     },

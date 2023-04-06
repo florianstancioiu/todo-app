@@ -28,7 +28,12 @@ const Main = () => {
       <div className={classes['todos-wrapper']}>
         <div className={classes.todos}>
           {todos.map((todo) => (
-            <Todo key={todo.id} title={todo.title} complete={todo.completed} />
+            <Todo
+              key={todo.id}
+              id={todo.id}
+              title={todo.title}
+              complete={todo.completed}
+            />
           ))}
         </div>
         <TodoNumber />
