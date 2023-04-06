@@ -34,6 +34,25 @@
   cursor: pointer;
 }
 
+.fully-complete {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 2rem;
+  top: 1.3rem;
+  background: var(--gradient);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-check {
+  width: 1rem;
+  height: 1rem;
+}
+
 @media screen and (min-width: 545px) {
   .wrapper {
     margin-bottom: 2.4rem;
@@ -51,6 +70,14 @@
   }
 
   .circle {
+    width: 2.6rem;
+    height: 2.6rem;
+    left: 2.2rem;
+    top: 1.8rem;
+  }
+
+  .fully-complete,
+  .complete {
     width: 2.6rem;
     height: 2.6rem;
     left: 2.2rem;
