@@ -14,7 +14,7 @@ const Main = () => {
   const todos = useSelector((state) => state.todos.todos);
 
   useEffect(() => {
-    fetch('./todos.json')
+    fetch('todos.json')
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
