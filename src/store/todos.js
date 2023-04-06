@@ -52,6 +52,28 @@ const todosSlice = createSlice({
         state.filterTodos = action.payload.filter;
       }
     },
+    switchTodos(state, action) {
+      const { dragItemId, dragOverItemId } = action.payload;
+      let dragItem;
+      let dragItemIndex;
+      let dragOverItemIndex;
+
+      for (let i = 0; i < state.todos.length; i++) {
+        const currentTodo = state.todos[i];
+
+        if (currentTodo.id === dragItemId) {
+          dragItem = currentTodo;
+          dragItemIndex = i;
+        }
+
+        if (currentTodo.id === dragOverItemId) {
+          dragOverItemIndex = i;
+        }
+      }
+
+      state.todos.splice(dragItemIndex, 1);
+      state.todos.splice(dragOverItemIndex, 0, dragItem);
+    },
   },
 });
 

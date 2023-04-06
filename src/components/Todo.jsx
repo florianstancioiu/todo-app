@@ -5,7 +5,14 @@ import IconCross from '../images/icon-cross.svg';
 import IconCheck from '../images/icon-check.svg';
 import { todosActions } from '../store/todos';
 
-const Todo = ({ id, title, complete }) => {
+const Todo = ({
+  id,
+  title,
+  complete,
+  dragStartHandler,
+  dragEnterHandler,
+  dropHandler,
+}) => {
   const dispatch = useDispatch();
   const wrapperClasses = complete
     ? `${classes.wrapper} ${classes.completed}`
@@ -20,7 +27,13 @@ const Todo = ({ id, title, complete }) => {
   };
 
   return (
-    <div draggable='true' className={wrapperClasses}>
+    <div
+      draggable='true'
+      onDragStart={(e) => dragStartHandler(e, id)}
+      onDragEnter={(e) => dragEnterHandler(e, id)}
+      onDragEnd={dropHandler}
+      className={wrapperClasses}
+    >
       {!complete && (
         <div
           onClick={() => {

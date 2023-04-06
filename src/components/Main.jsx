@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import classes from './Main.module.css';
@@ -13,6 +13,8 @@ const Main = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos.todos);
   const filterTodos = useSelector((state) => state.todos.filterTodos);
+  const dragItem = useRef();
+  const dragOverItem = useRef();
 
   useEffect(() => {
     fetch('todos.json')
@@ -22,6 +24,26 @@ const Main = () => {
         dispatch(todosActions.setTodos({ todos: data.todos }));
       });
   }, []);
+
+  const dragStartHandler = (event, index) => {
+    dragItem.current = index;
+  };
+
+  const dragEnterHandler = (event, index) => {
+    dragOverItem.current = index;
+  };
+
+  const dropHandler = (event) => {
+    dispatch(
+      todosActions.switchTodos({
+        dragItemId: dragItem.current,
+        dragOverItemId: dragOverItem.current,
+      })
+    );
+
+    dragItem.current = null;
+    dragOverItem.current = null;
+  };
 
   return (
     <main className={classes.main}>
@@ -35,6 +57,9 @@ const Main = () => {
                 id={todo.id}
                 title={todo.title}
                 complete={todo.completed}
+                dragStartHandler={dragStartHandler}
+                dragEnterHandler={dragEnterHandler}
+                dropHandler={dropHandler}
               />
             ))}
           {filterTodos === 'active' &&
@@ -46,6 +71,9 @@ const Main = () => {
                     id={todo.id}
                     title={todo.title}
                     complete={todo.completed}
+                    dragStartHandler={dragStartHandler}
+                    dragEnterHandler={dragEnterHandler}
+                    dropHandler={dropHandler}
                   />
                 );
               }
@@ -59,6 +87,9 @@ const Main = () => {
                     id={todo.id}
                     title={todo.title}
                     complete={todo.completed}
+                    dragStartHandler={dragStartHandler}
+                    dragEnterHandler={dragEnterHandler}
+                    dropHandler={dropHandler}
                   />
                 );
               }
