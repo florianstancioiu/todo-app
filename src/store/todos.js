@@ -45,7 +45,13 @@ const todosSlice = createSlice({
         return false;
       });
     },
-    filterTodos(state, action) {},
+    filterTodos(state, action) {
+      const allowedFilters = ['all', 'active', 'completed'];
+
+      if (allowedFilters.includes(action.payload.filter)) {
+        state.filterTodos = action.payload.filter;
+      }
+    },
   },
 });
 

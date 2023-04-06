@@ -1,36 +1,49 @@
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import classes from './SwitchTodos.module.css';
+import { todosActions } from '../store/todos';
 
 const SwitchTodos = () => {
-  const [activeClass, setActiveClass] = useState('all');
+  const filterTodos = useSelector((state) => state.todos.filterTodos);
+
+  const dispatch = useDispatch();
+
   const allTodosClasses =
-    activeClass === 'all'
+    filterTodos === 'all'
       ? `${classes.active} ${classes['all-todos']}`
       : classes['all-todos'];
+
   const activeTodosClasses =
-    activeClass === 'active'
+    filterTodos === 'active'
       ? `${classes.active} ${classes['active-todos']}`
       : classes['active-todos'];
+
   const completedTodosClasses =
-    activeClass === 'completed'
+    filterTodos === 'completed'
       ? `${classes.active} ${classes['completed-todos']}`
       : classes['completed-todos'];
 
+  const showAllTodos = () => {
+    dispatch(todosActions.filterTodos({ filter: 'all' }));
+  };
+
+  const showActiveTodos = () => {
+    dispatch(todosActions.filterTodos({ filter: 'active' }));
+  };
+
+  const showCompletedTodos = () => {
+    dispatch(todosActions.filterTodos({ filter: 'completed' }));
+  };
+
   return (
     <div className={classes.wrapper}>
-      <p onClick={() => setActiveClass('all')} className={allTodosClasses}>
+      <p onClick={() => showAllTodos()} className={allTodosClasses}>
         All
       </p>
-      <p
-        onClick={() => setActiveClass('active')}
-        className={activeTodosClasses}
-      >
+      <p onClick={() => showActiveTodos()} className={activeTodosClasses}>
         Active
       </p>
-      <p
-        onClick={() => setActiveClass('completed')}
-        className={completedTodosClasses}
-      >
+      <p onClick={() => showCompletedTodos()} className={completedTodosClasses}>
         Completed
       </p>
     </div>
