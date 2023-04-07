@@ -20,7 +20,6 @@ const Main = () => {
     fetch('todos.json')
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         dispatch(todosActions.setTodos({ todos: data.todos }));
       });
   }, []);
